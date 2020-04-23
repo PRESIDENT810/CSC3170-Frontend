@@ -39,7 +39,7 @@
       </el-table-column>
       <el-table-column prop="Language" label="Language" width="140">
       </el-table-column>
-      <el-table-column prop="Date" label="Release Date"  width="140">
+      <el-table-column prop="ReleaseDate" label="Release Date"  width="140">
       </el-table-column>
       <el-table-column prop="Introduction" label="Introduction" width="140">
       </el-table-column>

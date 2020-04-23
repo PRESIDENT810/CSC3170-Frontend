@@ -26,21 +26,27 @@ data = {
              'Language': 'CN',
              'ReleaseDate': 1991,
              'Introduction': 'Intro 1',
-             'Duration': '121 min'
+             'Duration': '121 min',
+             'AvgRate': 8.3,
+             'TotalRate': 1320
            },
            {
              'Title': "Movie 2",
              'Language': 'CN',
              'ReleaseDate': 1992,
              'Introduction': 'Intro 2',
-             'Duration': '122 min'
+             'Duration': '122 min',
+             'AvgRate': 8.3,
+             'TotalRate': 1320
            },
            {
              'Title': "Movie 3",
              'Language': 'CN',
              'ReleaseDate': 1993,
              'Introduction': 'Intro 3',
-             'Duration': '123 min'
+             'Duration': '123 min',
+             'AvgRate': 8.3,
+             'TotalRate': 1320
            },
          ]
        }
