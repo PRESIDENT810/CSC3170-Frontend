@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form ref="form" :model="form" label-width="80px">
+    <el-form id="Movieform" ref="form" :model="form" label-width="80px">
       <el-form-item label="Title">
         <el-input v-model="form.Title" placeholder="Enter Movie Title"></el-input>
       </el-form-item>
@@ -19,14 +19,14 @@
         </el-checkbox-group>
       </el-form-item>
       <el-form-item label="Order">
-        <el-radio-group v-model="form.resource">
+        <el-radio-group v-model="form.Order">
           <el-radio label="Order by Rating"></el-radio>
           <el-radio label="Order by Release Date"></el-radio>
           <el-radio label="Order by Duration"></el-radio>
         </el-radio-group>
       </el-form-item>
       <div>Rating Interval</div>
-      <el-slider v-model="value" range show-stops :max="10"></el-slider>
+      <el-slider v-model="Rating" range show-stops :max="10"></el-slider>
       <br>
       <el-form-item style="margin-left: 30%">
         <el-button type="primary" @click="onSubmit">Search</el-button>
@@ -65,16 +65,21 @@
           date2: '',
           delivery: false,
           type: [],
-          resource: '',
+          Order: '',
           desc: '',
         },
         MovieList: [],
-        value: [4, 8]
+        Rating: [4, 8]
       }
     },
     methods: {
       onSubmit() {
-        console.log('submit!');
+        var that = this
+        this.$axios({
+          method: 'post',
+          url: 'http://localhost:8090/MovieList',
+          data: {form: that.form, Rating: that.Rating}
+        })
       }
     },
     Created(){

@@ -7,7 +7,7 @@
               <template slot="title"><i class="el-icon-message"></i>Search</template>
               <el-menu-item index="1-1"><router-link to="/MovieList">Search Movie</router-link></el-menu-item>
                 <el-menu-item index="1-2"><router-link to="/CelebrityList">Search Celebrity</router-link></el-menu-item>
-                <el-menu-item index="1-3">Search Award</el-menu-item>
+<!--                <el-menu-item index="1-3">Search Award</el-menu-item>-->
             </el-submenu>
             <el-submenu index="2">
               <template slot="title"><i class="el-icon-menu"></i>Personal Center</template>
