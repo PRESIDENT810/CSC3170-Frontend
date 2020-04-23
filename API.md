@@ -87,3 +87,17 @@ data = {
          ]
        }
 ```
+
+3. Jump to movie detail page
+
+url = 'movie/title='+title
+
+Note that if there is space in title, it could be replaced by
+some character (%20 in my case)
+
+4. Jump to movie detail page
+
+url = 'celebrity/name='+name
+
+Note that if there is space in name, it could be replaced by
+some character (%20 in my case)

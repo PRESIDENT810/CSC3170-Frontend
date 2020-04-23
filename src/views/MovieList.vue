@@ -34,7 +34,7 @@
       </el-form-item>
     </el-form>
 
-    <el-table :data="MovieList" to="MovieInfo">
+    <el-table :data="MovieList" @row-click="MovieDetail">
       <el-table-column prop="Title" label="Title" width="140">
       </el-table-column>
       <el-table-column prop="Language" label="Language" width="140">
@@ -73,12 +73,43 @@
       }
     },
     methods: {
+      MovieDetail(row){
+        console.log(row.Title)
+        var title = row.Title
+        var url = 'movie/title='+title
+        this.$router.push(url)
+      },
       onSubmit() {
         var that = this
         this.$axios({
           method: 'post',
           url: 'http://localhost:8090/MovieList',
           data: {form: that.form, Rating: that.Rating}
+        }).then(function (response) {
+          console.log(response)
+          that.Celebrities = response.data.list
+        }).catch(function (error) {
+          var data = {
+            "list": [{
+              'Title': "Movie 1",
+              'Language': 'CN',
+              'ReleaseDate': 1991,
+              'Introduction': 'Intro 1',
+              'Duration': '121 min',
+              'AvgRate': 8.3,
+              'TotalRate': 1320
+            },
+              {
+                'Title': "Movie 2",
+                'Language': 'CN',
+                'ReleaseDate': 1992,
+                'Introduction': 'Intro 2',
+                'Duration': '122 min',
+                'AvgRate': 8.3,
+                'TotalRate': 1320
+              }]
+          }
+          that.MovieList = data.list
         })
       }
     },
